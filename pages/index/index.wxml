@@ -1,0 +1,59 @@
+<!-- 顶部导航栏 -->
+<view class="header">
+  <view class="location" bindtap="getUserLocation">
+    <image src="/icons/location.png" class="location-icon"></image>
+    <text>{{locationName}}</text>
+  </view>
+  <view class="search-bar">
+    <input placeholder="搜索农产品" bindinput="onSearchInput" />
+    <button bindtap="onSearch" class="search-button">搜索</button>
+  </view>
+</view>
+
+<!-- 轮播图 -->
+<swiper class="banner" autoplay interval="3000">
+  <swiper-item wx:for="{{bannerList}}" wx:key="id" bindtap="viewProductDetail" data-id="{{item.id}}">
+    <image src="{{item.image}}" mode="aspectFill" />
+  </swiper-item>
+</swiper>
+
+<!-- 分类入口 -->
+<view class="category-grid">
+  <view class="category-item" wx:for="{{categories}}" wx:key="id" bindtap="navigateToCategory" data-id="{{item.id}}">
+    <image src="{{item.icon}}" />
+    <text>{{item.name}}</text>
+  </view>
+</view>
+
+<!-- 助农政策专区 -->
+<view class="policy-section">
+  <view class="section-header">
+    <text class="title">助农政策专区</text>
+    <text class="more" bindtap="viewAllPolicies">查看更多 ></text>
+  </view>
+  <view class="policy-list">
+    <view class="policy-item" wx:for="{{policyList}}" wx:key="id" bindtap="viewPolicyDetail">
+      <image src="{{item.cover}}" class="policy-image" />
+      <view class="policy-info">
+        <text class="policy-title">{{item.title}}</text>
+        <text class="policy-date">发布日期: {{item.date}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 热销产品标题 -->
+<view class="product-section-header">
+  <text class="product-title">热销产品</text>
+  <text class="product-more" bindtap="viewAllProducts">下滑查看更多商品 |</text>
+</view>
+
+<!-- 热销商品推荐 -->
+<view class="product-list" >
+  <view class="product-item" wx:for="{{productList}}" wx:key="id" data-id="{{item.id}}" bindtap="viewProductDetail">
+    <image src="{{item.image}}" />
+    <text class="name">{{item.name}}</text>
+    <text class="price">¥{{item.price}}</text>
+    <text class="sales">销量: {{item.sales}}</text>
+  </view>
+</view>

@@ -1,0 +1,40 @@
+<!-- category/index.wxml -->
+<view class="container">
+  <!-- 左侧分类导航 -->
+  <scroll-view class="tabs-scroll" scroll-y scroll-into-view="tab{{activeTab}}">
+    <view 
+      wx:for="{{tabs}}" 
+      wx:key="id" 
+      class="tab-item {{activeTab === index ? 'active' : ''}}" 
+      bindtap="switchTab"
+      data-index="{{index}}"
+      id="tab{{index}}"
+    >
+      {{item.name}}
+    </view>
+  </scroll-view>
+
+  <!-- 右侧商品列表 -->
+  <scroll-view class="products-scroll" scroll-y>
+    <view class="product-list">
+      <view 
+        wx:for="{{filteredProducts}}" 
+        wx:key="id" 
+        class="product-item" 
+        bindtap="viewProductDetail"
+        data-id="{{item.id}}"
+      >
+        <image src="{{item.image}}" class="product-image" />
+        <view class="product-info">
+          <text class="product-title">{{item.name}}</text>
+          <text class="product-price">¥{{item.price}}</text>
+          <text class="product-sales">销量: {{item.sales}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{!filteredProducts.length}}" class="empty">
+    <text class="empty-text">该分类下暂无商品</text>
+  </view>
+</view>

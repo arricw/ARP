@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/index",    
+    "pages/logo/index",       
+    "pages/cart/index",        
+    "pages/profile/index",
+    "pages/product/detail"     
+  ],
+  "window": {
+    "navigationBarTitleText": "ARP",
+    "navigationBarBackgroundColor": "#4CAF50",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light"
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "usingComponents":{
+    "van-button":"vant-weapp/button"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需要获取您的位置信息以便提供本地服务"
+    }
+  },
+  "compilerOptions": {
+    "typeRoots": ["./types"]
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#4CAF50",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/icons/home.png",
+        "selectedIconPath": "/icons/home-active.png"
+      },
+       {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "/icons/category.png",
+        "selectedIconPath": "/icons/category-active.png"
+      },
+      {
+        "pagePath": "pages/logo/index",
+        "text": "",
+        "iconPath": "/icons/logo-center.png",
+        "selectedIconPath": "/icons/logo-center.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "/icons/cart.png",
+        "selectedIconPath": "/icons/cart-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "/icons/profile.png",
+        "selectedIconPath": "/icons/profile-active.png"
+      }
+    ]
+  }
+}

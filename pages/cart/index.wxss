@@ -1,0 +1,153 @@
+/* 容器设置 */
+.container {
+  position: relative;
+  height: 100vh;
+  background: #f8f8f8;
+  padding-top: env(safe-area-inset-top); /* 适配刘海屏 */
+}
+
+/* 商品滚动区域 */
+.product-scroll {
+  height: calc(100vh - 120rpx); /* 预留底部栏高度 */
+  padding: 0; /* 去掉内边距，让商品紧贴边缘 */
+}
+
+/* 商品列表容器 */
+.product-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 商品项样式 */
+.product-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1rpx solid #e0e0e0; /* 不太明显的实线分隔，颜色较浅 */
+  padding: 24rpx;
+  margin: 0;
+  border-radius: 0; /* 去掉圆角 */
+  box-shadow: none; /* 去掉阴影 */
+  transition: none; /* 去掉过渡效果 */
+}
+
+/* 商品图片 */
+.product-image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 24rpx;
+}
+
+/* 商品信息 */
+.product-info {
+  flex: 1;
+}
+
+.product-title {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 16rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.product-price {
+  color: #e64340;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+/* 操作栏 */
+.action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.quantity-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.quantity {
+  font-size: 30rpx;
+  color: #333;
+}
+
+/* 底部结算栏 */
+.checkout-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24rpx;
+  background: #fff;
+  box-shadow: 0 -4rpx 12rpx rgba(0, 0, 0, 0.06);
+  z-index: 100;
+  gap: 24rpx;
+}
+
+/* 合计信息容器 */
+.total-wrapper {
+  flex: 1;
+  min-width: 0; /* 关键属性：允许内容截断 */
+  display: flex;
+  align-items: baseline;
+  overflow: hidden;
+}
+
+/* 价格显示部分 */
+.total-text {
+  flex-shrink: 0;
+  color: #333;
+}
+
+.total-price {
+  flex: 1;
+  color: #e64340;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin: 0 12rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.total-count {
+  flex-shrink: 0;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.checkout-btn {
+  width: 200rpx;
+  flex-shrink: 0;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120rpx;
+}
+
+.empty-image {
+  width: 240rpx;
+  height: 240rpx;
+  margin-bottom: 40rpx;
+}
+
+.empty-text {
+  color: #999;
+  font-size: 28rpx;
+}

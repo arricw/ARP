@@ -1,0 +1,45 @@
+<view class="container">
+  <!-- 商品图片 -->
+  <image src="{{product.image}}" class="product-image" mode="aspectFill"></image>
+
+  <!-- 商品信息 -->
+  <view class="product-info">
+    <text class="product-name">{{product.name}}</text>
+    <text class="product-price">¥{{product.price}}</text>
+    <view class="product-description">
+      <text>商品描述：</text>
+      <text>{{product.description}}</text>
+    </view>
+    <view class="product-meta">
+      <text>销量：{{product.sales}}件</text>
+      <text>分类：{{product.category}}</text>
+    </view>
+  </view>
+
+  <!-- 卖家信息 -->
+  <view class="seller-info">
+    <text class="seller-title">商家</text>
+    <view class="seller-details">
+      <text class="seller-name">店铺：{{product.seller.name}}</text>
+      <text class="seller-contact">联系方式：{{product.seller.contact}}</text>
+    </view>
+  </view>
+
+  <!-- 商品评价 -->
+  <view class="product-reviews">
+    <text class="reviews-title">商品评价</text>
+    <view class="review-item" wx:for="{{product.reviews}}" wx:key="id">
+      <view class="review-header">
+        <text class="review-author">{{item.author}}</text>
+        <text class="review-date">{{item.date}}</text>
+      </view>
+      <text class="review-content">{{item.content}}</text>
+    </view>
+  </view>
+
+
+  <!-- 加入购物车按钮 -->
+  <view class="fixed-button-container">
+    <button bindtap="addToCart" class="add-to-cart-button">加入购物车</button>
+  </view>
+</view>

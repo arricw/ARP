@@ -1,0 +1,23 @@
+{
+  "name": "arp",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.11.7",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mysql2": "^3.14.0",
+    "vant-weapp": "^0.5.29"
+  },
+  "devDependencies": {
+    "@types/wechat-miniprogram": "^3.4.8"
+  },
+  "description": "//,\r       {\r         \"pagePath\": \"pages/category/index\",\r         \"text\": \"分类\",\r         \"iconPath\": \"/icons/category.png\",\r         \"selectedIconPath\": \"/icons/category-active.png\"\r       }，\r       // {\r       //   \"pagePath\": \"pages/logo/index\", \r       //   \"text\": \"\",\r       //   \"iconPath\": \"/icons/logo-center.png\", \r       //   \"selectedIconPath\": \"/icons/logo-center.png\"\r       // },\r       // {\r       //   \"pagePath\": \"pages/cart/index\",\r       //   \"text\": \"购物车\",\r       //   \"iconPath\": \"/icons/cart.png\",\r       //   \"selectedIconPath\": \"/icons/cart-active.png\"\r       // },\r       // {\r       //   \"pagePath\": \"pages/profile/index\",\r       //   \"text\": \"我的\",\r       //   \"iconPath\": \"/icons/profile.png\",\r       //   \"selectedIconPath\": \"/icons/profile-active.png\"\r       // }"
+}

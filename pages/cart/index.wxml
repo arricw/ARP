@@ -1,0 +1,71 @@
+<view class="container">
+  <!-- 商品列表（可滚动区域） -->
+  <scroll-view class="product-scroll" scroll-y>
+    <!-- 商品列表内容 -->
+    <view class="product-list">
+      <view 
+        wx:for="{{cartList}}" 
+        wx:key="id" 
+        class="product-item"
+      >
+        <!-- 商品图片 -->
+        <image src="{{item.image}}" class="product-image" mode="aspectFill" bindtap="viewProductDetail" data-id="{{item.id}}" />
+
+        <!-- 商品信息 -->
+        <view class="product-info">
+          <text class="product-title">{{item.name}}</text>
+          <text class="product-price">¥{{item.price}}</text>
+
+        <!-- 数量操作 -->
+          <view class="action-bar">
+            <view class="quantity-wrapper">
+              <van-button 
+                type="primary" 
+                size="mini" 
+                icon="minus" 
+                bind:click="decreaseQuantity" 
+                data-id="{{item.id}}"
+              />
+              <text class="quantity">{{item.quantity}}</text>
+              <van-button 
+                type="primary" 
+                size="mini" 
+                icon="plus" 
+                bind:click="increaseQuantity" 
+                data-id="{{item.id}}"
+              />
+            </view>
+            <van-button 
+              type="danger" 
+              size="mini" 
+              bind:click="deleteItem" 
+              data-id="{{item.id}}"
+            >删除</van-button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 空状态提示 -->
+    <view wx:if="{{!cartList.length}}" class="empty">
+      <image src="/icons/cart.png" class="empty-image" mode="aspectFit" />
+      <text class="empty-text">购物车空空如也，去逛逛吧～</text>
+    </view>
+  </scroll-view>
+
+  <!-- 底部结算栏（固定定位） -->
+  <view class="checkout-bar">
+    <!-- 移除全选复选框 -->
+    <view class="total-wrapper">
+      <text class="total-text">合计：</text>
+      <text class="total-price">¥{{totalPrice}}</text>
+      <text class="total-quantity">（共{{totalQuantity}}件）</text>
+    </view>
+    
+    <van-button 
+      type="primary" 
+      size="small" 
+      custom-class="checkout-btn"
+    >去结算</van-button>
+  </view>
+</view>

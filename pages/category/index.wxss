@@ -1,0 +1,97 @@
+/* category/index.wxss */
+.container {
+  display: flex;
+  position: absolute;
+  top: -100;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: row; /* 明确横向排列 */
+  height: 100vh;
+}
+
+/* 左侧分类导航 */
+.tabs-scroll {
+  align-self: flex-start;
+  height: 100vh; /* 继承容器高度 */
+  width: 200rpx;
+  background: #f8f8f8;
+  overflow-y: auto; /* 添加垂直滚动 */
+  align-self: flex-start; /* 新增关键代码 */
+}
+
+.tab-item {
+  padding: 32rpx;
+  font-size: 28rpx;
+  color: #666;
+  border-left: 6rpx solid transparent;
+  transition: all 0.3s;
+}
+
+.tab-item.active {
+  color: #4CAF50;
+  font-weight: bold;
+  background: #fff;
+  border-left-color: #4CAF50;
+}
+
+/* 右侧商品列表 */
+.products-scroll {
+  flex: 1;
+  height: 80vh;
+  padding: 20rpx;
+  overflow-y: auto; /* 添加垂直滚动 */
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 关键修改：两列布局 */
+  gap: 24rpx;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column; /* 改为垂直布局 */
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.06);
+}
+
+.product-image {
+  width: 100% !important; /* 充满容器宽度 */
+  height: 200rpx !important; /* 固定图片高度 */
+  margin-right: 0; /* 移除原有右边距 */
+  margin-bottom: 16rpx; /* 增加图片与文字间距 */
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-title {
+  font-size: 30rpx;
+  line-height: 1.4;
+}
+
+.product-price {
+  color: #e64340;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.product-sales {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.empty{
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  height: 100px;
+  color: #999;
+}

@@ -1,0 +1,67 @@
+<view class="container">
+  <!-- 用户信息卡片 -->
+  <view class="user-card">
+    <image 
+      src="{{avatar}}" 
+      class="avatar" 
+    />
+    <view class="user-info">
+      <text class="nickname">{{nickname}}</text>
+      <text class="phone">{{phone}}</text>
+    </view>
+    <van-icon 
+      name="arrow" 
+      class="arrow" 
+      bindtap="navigateToEdit" 
+    />
+  </view>
+
+  <!-- 订单状态导航 -->
+  <view class="order-nav">
+    <view 
+      wx:for="{{orderStatusList}}" 
+      wx:key="type" 
+      class="nav-item"
+      bindtap="navigateToOrderList"
+      data-type="{{item.type}}"
+    >
+      <van-icon name="{{item.icon}}" size="48rpx" />
+      <text class="nav-text">{{item.text}}</text>
+      <text wx:if="{{item.count > 0}}" class="badge">{{item.count}}</text>
+    </view>
+  </view>
+
+  <!-- 助农政策 -->
+  <view class="policy-section">
+    <view class="section-header">
+      <text class="title">助农政策</text>
+      <text class="more" bindtap="viewMorePolicies">查看更多 ></text>
+    </view>
+    
+    <view class="policy-grid">
+      <view 
+        wx:for="{{policyList}}" 
+        wx:key="id" 
+        class="policy-item"
+        bindtap="navigateToPolicy"
+        data-url="{{item.url}}"
+      >
+        <image src="{{item.icon}}" class="policy-icon" />
+        <text class="policy-title">{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能入口列表 -->
+  <view class="func-list">
+    <block wx:for="{{funcList}}" wx:key="id">
+      <van-cell 
+        title="{{item.title}}" 
+        is-link
+        icon="{{item.icon}}" 
+        bind:click="navigateToPage"
+        data-url="{{item.url}}"
+      />
+    </block>
+  </view>
+</view>

@@ -1,0 +1,128 @@
+.container {
+    padding: 24rpx;
+    background: #fff;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 500rpx;
+    margin-bottom: 24rpx;
+    border-radius: 16rpx;
+  }
+  
+  .product-info {
+    padding: 24rpx;
+    background: #f8f8f8;
+    border-radius: 16rpx;
+  }
+  
+  .product-name {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16rpx;
+  }
+  
+  .product-price {
+    font-size: 32rpx;
+    color: #e64340;
+    margin-bottom: 24rpx;
+  }
+  
+  .product-description {
+    font-size: 28rpx;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 24rpx;
+  }
+  
+  .product-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24rpx;
+    color: #999;
+  }
+
+  .fixed-button-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-to-cart-button {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #e64340;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block;
+  }
+
+  .seller-info {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .seller-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .seller-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .seller-name,
+  .seller-contact {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .product-reviews {
+    padding: 15px;
+  }
+  
+  .reviews-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .review-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between; /* 使评价人姓名和评价时间分别靠左和靠右 */
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .review-author {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .review-date {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .review-content {
+    font-size: 14px;
+    color: #333;
+    white-space: pre-wrap; /* 实现评价内容换行显示 */
+  }
